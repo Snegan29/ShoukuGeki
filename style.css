@@ -1,0 +1,388 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  .slides {
+    width: 100%;
+    height: 100vh;
+    opacity:0;
+    transition: opacity 2s;
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 120px;
+  }
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .flex-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+    align-items: center;
+    font-size: 18px;
+    box-shadow: 3px 1px 9px  ;
+    width: 100%;
+  }
+
+
+  
+
+  #logo {
+    height: 65px;
+  }
+  
+  #search-icon {
+    height: 33px;
+  }
+  
+  #imagebanner {
+    height: 900px;
+    width: 100%;
+}
+
+.item {
+  cursor: pointer;
+  color: #ff2147;
+}
+
+.item:hover{
+  color: black;
+  border-bottom: 2px solid crimson;
+}
+
+
+/* SEARCH BAR STYLES */
+
+.search-box {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+  padding: 20px;
+}
+
+.input-search {
+  border-style: none;
+  padding: 10px;
+  font-size: 17px;
+  letter-spacing: 2px;
+  outline: none;
+  border-radius: 15px;
+  transition: all .5s ease-in-out;
+  background-color: white;
+  color: #ff2147;
+  box-shadow: 0px 2px 3px ;
+}
+
+.input-search::placeholder {
+  color: #ff2147;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.btn-search {
+  width: 20px;
+  height: 20px;
+  border-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  color: black;
+  background: none; 
+  pointer-events: painted;
+}
+
+/* Add hover effect for the image */
+
+.btn-search:hover {
+  transform: scale(1.1);
+}
+
+.btn-search:focus ~ .input-search {
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid #ff2147;
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 4);
+}
+
+.input-search:focus {
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+
+
+
+/* SUB-DIV SECTION */
+
+.sub-div {
+    margin: 50px;
+}
+
+h1 {
+  font-size: 2rem;
+  border-bottom: 1px solid black;
+}
+
+#popup {
+  position: absolute;
+  top: 160%;
+  left: 50%;
+  transform: translate(-50%,-50%); 
+  background: white;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 30px;
+  display: none;
+  overflow-y: scroll;
+  height: 500px;
+  width: 35vw;
+
+}
+
+#popup {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch
+}
+
+#closeBtn {
+  position: absolute;
+  /* top: 0px; */
+  z-index: 100;
+  background-color: aqua;
+}
+
+#popup-heading{
+  text-align: center;
+  text-decoration: underline;
+}
+
+
+
+
+
+/* RANDOMISE MEALS SECTION */
+
+#foodoftheday{
+  border-bottom: 3px solid black;
+  padding: 10px;
+}
+
+random-meals{
+  display: flex;
+  flex-direction: row;
+}
+
+.random{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: black 0.3s ease;
+}
+
+#randomizedDiv{
+  margin-top: 40px;
+  border: 1px solid black;
+  cursor: pointer;
+
+}
+
+.randomized-image{
+    height: 350px;
+    /* border: 1px solid black; */
+}
+
+.randomized-meal-name{
+  padding: 10px;
+  
+  text-align: center;
+  /* border: 1px solid black; */
+}
+
+/* #randomized-list{
+  overflow-y: scroll;
+  padding: 20px;
+} */
+
+#ul {
+  padding: 20px;
+  /* border: 1px solid black; */
+  overflow: hidden;
+}
+
+
+
+
+
+
+/* SEARCH RESULTS SECTION */
+
+#search-results{
+    margin: 30px;
+}
+
+#changesearchcolor {
+  color: #ff2147;
+}
+
+#search-results{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 3px solid black;
+    /* padding: 10px; */
+    margin-top: 30px;
+    
+}
+
+/* h1 {
+  border-bottom: 1px solid black;
+} */
+
+
+.recipe-img{
+    height: 350px;
+    width: 100%;
+    /* border-radius: 15px; */
+    
+}
+
+.recipe-name{
+    margin: 10px;
+    /* border: 1px solid red; */
+    width: 100%;
+    font-size: 23px;
+    text-align: center;
+}
+
+
+#allRecipes{
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3,1fr);
+    align-content: center;
+
+    
+    /* background-color: aqua; */
+
+    padding: 30px;
+}
+
+
+
+.recipes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid black; */
+    transition: black 0.3s ease;
+    /* margin: 20px; */
+    /* border-radius: 15px; */
+    border: 1px solid black;
+    /* padding: 10px; */
+}
+
+.recipes:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 8px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+
+
+
+
+
+
+
+/* Media query */
+
+@media (max-width: 768px) {
+  .slides{
+    height: 43vh;
+  }
+
+  .sub-div {
+    margin: 10px;
+  }
+  .random {
+    padding: 0;
+  }
+  #popup {
+    top: 100%;
+    left: 50%;
+    height: 60vh;
+    width: 90vw;
+  }
+
+  .flex-box {
+      flex-direction: column;
+  }
+
+  .flex {
+      width: 100%;
+  }
+
+  .search-box {
+      width: 100%;
+  }
+
+  #allRecipes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items:center ; */
+    flex-wrap: wrap;
+    margin: 15px;
+    padding: 25px;
+  }
+
+  .recipes{
+    margin: 6px;
+  }
+
+  .input-search {
+      width: 100%;
+  }
+
+  .btn-search {
+      position: relative;
+      margin-top: 10px;
+      right: auto;
+  }
+  .menu {
+    display: none; /* Hide the menu items */
+}
+
+.search-box {
+    margin-left: auto; /* Move the search box to the right */
+}
+
+.navbar {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    text-align: center;
+}
+
+  /* Add any other specific styles for smaller screens */
+}
