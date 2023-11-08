@@ -129,14 +129,22 @@ function showPopup() {
 
 
 // Event listener to open the popup
-randomizedDiv.addEventListener('click', showPopup);
-
-document.addEventListener('click', function (event) {
-    if (event.target === popup) {
-        hidePopup();
-    }
+randomizedDiv.addEventListener('click', () => {
+    showPopup()
+    const closeBtn = document.getElementById("closeBtn")
+    closeBtn.style.display = "inherit"
 });
 
+// document.addEventListener('click', function (event) {
+//     if (event.target === popup) {
+//         hidePopup();
+//     }
+// });
+
+closeBtn.addEventListener("click", () => {
+    popup.style.display = "none"
+    closeBtn.style.display = "none"
+})
 
 
 // Image changer
