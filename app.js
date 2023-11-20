@@ -23,7 +23,7 @@ function searchByNameAsync(searchValue){
 function category(clickedElement) {
     var anchorText = clickedElement.textContent;
     searchByNameAsync(anchorText)
-    searchedItem.innerHTML = `Search Results for <span id="changesearchcolor">${anchorText}</span>` 
+    searchedItem.innerHTML = `PALATE QUEST:  <span id="changesearchcolor">${anchorText}</span>` 
     searchResults.scrollIntoView({ behavior: "smooth" })
 }
 
@@ -36,7 +36,7 @@ function handleEnterKey(event) {
         if (inputValue !== '') {
             searchByNameAsync(inputValue);
         }
-        searchedItem.innerHTML = `Search Results for <span id="changesearchcolor">${inputValue}</span>` 
+        searchedItem.innerHTML = `PALATE QUEST:  <span id="changesearchcolor">${inputValue}</span>` 
         searchResults.scrollIntoView({ behavior: "smooth" });
     }
 
