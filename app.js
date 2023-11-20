@@ -2,7 +2,7 @@
 const inputEle= document.getElementById('input')
 const bodyDiv = document.getElementById('allRecipes')
 
-let random = document.getElementsByClassName("random")
+let randomFood = document.getElementsByClassName("random")
 let randomizedDiv = document.getElementById("randomizedDiv")
 let ul = document.getElementById("ul")
 let popup = document.getElementById("popup")
@@ -19,6 +19,15 @@ function searchByNameAsync(searchValue){
     .catch((err)=> console.log('There is an error occured',err))
 }
 
+// Search by category
+function category(clickedElement) {
+    var anchorText = clickedElement.textContent;
+    searchByNameAsync(anchorText)
+    searchedItem.innerHTML = `Search Results for <span id="changesearchcolor">${anchorText}</span>` 
+    searchResults.scrollIntoView({ behavior: "smooth" })
+}
+
+
 function handleEnterKey(event) {
     if (event.key === 'Enter') {
        
@@ -27,10 +36,9 @@ function handleEnterKey(event) {
         if (inputValue !== '') {
             searchByNameAsync(inputValue);
         }
-        
+        searchedItem.innerHTML = `Search Results for <span id="changesearchcolor">${inputValue}</span>` 
         searchResults.scrollIntoView({ behavior: "smooth" });
     }
-    searchedItem.innerHTML = `Search Results for <span id="changesearchcolor">${inputValue}</span>` 
 
 }
 
@@ -46,9 +54,6 @@ function appendDataWithHtml(data){
         createHtml(data[i])
     }
 }
-
-
-
 
 
 function createHtml(singleMeal){
@@ -69,6 +74,7 @@ function createHtml(singleMeal){
 }
 
 
+// Random meal function.
 
 function randomizeTheMeals(){
     fetch("https://www.themealdb.com/api/json/v1/1/random.php")
@@ -87,6 +93,8 @@ function appendRandomMeal(randomized) {
     let randomizedImage = document.createElement("img");
     randomizedImage.classList.add("randomized-image");
     randomizedImage.src = randomized.strMealThumb;
+
+    console.log(randomized.strCategory)
 
     let randomizedRecipeName = document.createElement("h2");
     randomizedRecipeName.classList.add("randomized-meal-name");
@@ -135,16 +143,16 @@ randomizedDiv.addEventListener('click', () => {
     closeBtn.style.display = "inherit"
 });
 
-// document.addEventListener('click', function (event) {
-//     if (event.target === popup) {
-//         hidePopup();
-//     }
-// });
+
 
 closeBtn.addEventListener("click", () => {
     popup.style.display = "none"
     closeBtn.style.display = "none"
 })
+
+// Category Function
+
+
 
 
 // Image changer

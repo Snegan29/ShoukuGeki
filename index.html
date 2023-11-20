@@ -13,7 +13,23 @@
             <div class="flex">
                 <div class="menu" id="menu">
                     <div class="item">Home</div>
-                    <div class="item">Recipes</div>          
+                    <div class="item">Recipes</div>
+                    <div class="item dropdown">
+                        <div>Category</div>
+                        <div class="dropdown-content">
+                            <a onclick="category(this)" id="name">Dessert</a>
+                            <a onclick="category(this)" id="name">Vegetarian</a>
+                            <a onclick="category(this)">Pork</a>
+                            <a onclick="category(this)">Starter</a>
+                            <a onclick="category(this)">Side</a>
+                            <a onclick="category(this)">Seafood</a>
+                            <a onclick="category(this)">Pork</a>
+                            <a onclick="category(this)">Chicken</a>
+                            <a onclick="category(this)">Miscellaneous</a>
+                            <a onclick="category(this)">Chicken</a>
+                            <a onclick="category(this)">Beef</a>
+                        </div>
+                      </div>          
                 </div>
                 <div class=" search-box">
                     <input class="input-search" id="input" type="text" placeholder="...Search by Category">
@@ -41,7 +57,6 @@
     <div class="sub-div">
         <h1 id="foodoftheday">TODAY'S CHALLENGE</h1>
         <div class="random">
-            
             <div id="randomizedDiv"> <!-- Images and names will be appended here. --></div>   
             <img id="closeBtn" src="images/close button.png" alt="">
             <div id="popup">
@@ -53,7 +68,7 @@
         </div>  
         <div >
             <div id="search-results">
-                <h1 >Search Results</h1></div>
+                <h1 id="searcheditem" >Search Results</h1></div>
             <div id="allRecipes"><!-- Search Results will be shown here. --></div>
             
         </div>
